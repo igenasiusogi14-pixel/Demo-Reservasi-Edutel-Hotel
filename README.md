@@ -80,10 +80,7 @@
 
     <p>Catatan: Ini adalah contoh simulasi. Kebijakan pembatalan: Gratis hingga 24 jam sebelum check-in.</p>
 
-</body>
-</html> 
-
-<button onclick="simpanReservasi()">Konfirmasi Pemesanan</button>
+    <button onclick="simpanReservasi()">Konfirmasi Pemesanan</button>
 
 <script>
 function simpanReservasi() {
@@ -107,3 +104,8 @@ function lihatReservasi() {
     alert(JSON.stringify(reservasi, null, 2));
 }
 </script>
+
+</body>
+</html> 
+
+
