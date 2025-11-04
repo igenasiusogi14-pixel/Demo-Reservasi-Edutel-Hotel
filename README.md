@@ -3,7 +3,7 @@ Edutel Hotel merupakan hotel Praktik siswa
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <title>Reservasi Hotel ABC - Contoh Bahan Ajar</title>
+    <title>Reservasi Edutel Hotel - Contoh Bahan Ajar</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
         .form { border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; }
@@ -49,8 +49,8 @@ Edutel Hotel merupakan hotel Praktik siswa
     <!-- Daftar Hasil Pencarian -->
     <h2>Hasil Pencarian Kamar</h2>
     <div class="result">
-        <h3>Hotel Grand Jakarta - Kamar Deluxe</h3>
-        <p>Lokasi: Jakarta Pusat | Fasilitas: WiFi Gratis, Sarapan, Kolam Renang</p>
+        <h3>Hotel Edutel Hotel - Kamar Deluxe</h3>
+        <p>Lokasi: Labuan Bajo | Fasilitas: WiFi Gratis, Sarapan, Kolam Renang</p>
         <p>Harga: Rp 450.000/malam | Rating: 4.5/5 (Berdasarkan 200 ulasan)</p>
         <p>Ulasan: "Kamar bersih dan nyaman, staf ramah." - Tamu Anonim</p>
         <button onclick="showBookingForm()">Pilih Kamar Ini</button>
@@ -58,7 +58,7 @@ Edutel Hotel merupakan hotel Praktik siswa
     
     <div class="result">
         <h3>Hotel Budget Inn - Kamar Standar</h3>
-        <p>Lokasi: Jakarta Selatan | Fasilitas: WiFi Gratis, Parkir</p>
+        <p>Lokasi: Labuan Bajo | Fasilitas: WiFi Gratis, Parkir</p>
         <p>Harga: Rp 250.000/malam | Rating: 3.8/5 (Berdasarkan 150 ulasan)</p>
         <p>Ulasan: "Harga murah, tapi fasilitas sederhana." - Tamu Anonim</p>
         <button onclick="showBookingForm()">Pilih Kamar Ini</button>
