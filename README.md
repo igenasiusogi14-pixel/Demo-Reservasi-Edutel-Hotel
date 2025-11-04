@@ -1,24 +1,61 @@
-# Demo-Reservasi-Edutel-Hotel
-Edutel Hotel merupakan hotel Praktik siswa
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <title>Reservasi Edutel Hotel - Contoh Bahan Ajar</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .form { border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; }
-        .result { background-color: #f9f9f9; padding: 10px; margin-bottom: 10px; }
-        button { background-color: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer; }
-    </style>
-    <script>
-        // Untuk menunjukan Form Pemesanan setelah memilih kamar
-        function showBookingForm() {
-            document.getElementById('bookingForm').style.display = 'block';
-            window.scrollTo(0, document.body.scrollHeight);
-        }
-    </script>
+    <title>Reservasi Hotel Demo</title>
 </head>
 <body>
+    <h2>Formulir Reservasi</h2>
+    Nama: <input type="text" id="nama"><br>
+    Email: <input type="email" id="email"><br>
+    Telepon: <input type="tel" id="telepon"><br>
+    Pembayaran: 
+    <select id="pembayaran">
+        <option>Kartu Kredit</option>
+        <option>Transfer Bank</option>
+        <option>E-Wallet</option>
+    </select><br>
+    <button onclick="simpanReservasi()">Konfirmasi Pemesanan</button>
+    
+    <hr>
+    <button onclick="lihatReservasi()">Lihat Daftar Reservasi</button>
+    <div id="daftarReservasi"></div>
+    
+    <script>
+    function simpanReservasi() {
+        let nama = document.getElementById('nama').value;
+        let email = document.getElementById('email').value;
+        let telepon = document.getElementById('telepon').value;
+        let pembayaran = document.getElementById('pembayaran').value;
+        let waktu = new Date().toLocaleString();
+
+        let reservasi = JSON.parse(localStorage.getItem('reservasi')) || [];
+        reservasi.push({nama, email, telepon, pembayaran, waktu});
+        localStorage.setItem('reservasi', JSON.stringify(reservasi));
+        alert("Reservasi berhasil!");
+    }
+
+    function lihatReservasi() {
+        let reservasi = JSON.parse(localStorage.getItem('reservasi')) || [];
+        if (reservasi.length === 0) {
+            document.getElementById('daftarReservasi').innerHTML = "<p>Belum ada reservasi.</p>";
+            return;
+        }
+        let html = "<h2>Daftar Reservasi</h2><table border='1'><tr><th>Nama</th><th>Email</th><th>Telepon</th><th>Pembayaran</th><th>Waktu</th></tr>";
+        reservasi.forEach(function(data) {
+            html += `<tr>
+                <td>${data.nama}</td>
+                <td>${data.email}</td>
+                <td>${data.telepon}</td>
+                <td>${data.pembayaran}</td>
+                <td>${data.waktu}</td>
+            </tr>`;
+        });
+        html += "</table>";
+        document.getElementById('daftarReservasi').innerHTML = html;
+    }
+    </script>
+</body>
+</html>
 
     <h1>Reservasi Hotel ABC</h1>
     <p>Selamat datang di sistem reservasi hotel kami. Isi formulir di bawah untuk mencari kamar.</p>
